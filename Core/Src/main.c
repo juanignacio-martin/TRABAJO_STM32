@@ -33,6 +33,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define T_antirrebotes 300	//CONSTANTE PARA CIRCUITO ANTIRREBOTES
+#define Umbral_light 100    //CONSTANTE PARA MEDIR LUMINOSIDAD
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,6 +50,8 @@ I2S_HandleTypeDef hi2s3;
 SPI_HandleTypeDef hspi1;
 
 uint32_t time;   //VARIABLE PARA TIEMPO ANTIRREBOTES
+uint32_t light =0;	//VARIABLE QUE MUESTRA LUMINOSIDAD DETECTADA POR LDR
+int sensor_light =0;	//VARIABLE CONTROL CUANDO SE ENCIENDE LA LUZ
 int sw =0;     //VARIABLE QUE CONTROLA EL ESTADO DEL INTERRUPTOR
 
 /* USER CODE BEGIN PV */
@@ -82,6 +85,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 			}
 		tiempo =HAL_GetTick();
 		}
+	}
+}
+
+void HAL_ADC_ConvCPltCallback(ADC_HandleTypeDef *hadc){
+	if(hadc-> Instance == ADC1){
+		if(light < Umbral_light)
+			sensor_light = 1;			//No hay luz, podemos encender el LED
+		else
+			sensor_light = 0;			//Hay luz, no se enciende el LED
 	}
 }
 /* USER CODE END 0 */
