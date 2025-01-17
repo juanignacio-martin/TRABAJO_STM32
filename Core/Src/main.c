@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define T_antirrebotes 300	//CONSTANTE PARA CIRCUITO ANTIRREBOTES
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,6 +47,9 @@ I2S_HandleTypeDef hi2s2;
 I2S_HandleTypeDef hi2s3;
 
 SPI_HandleTypeDef hspi1;
+
+uint32_t time;   //VARIABLE PARA TIEMPO ANTIRREBOTES
+int sw =0;     //VARIABLE QUE CONTROLA EL ESTADO DEL INTERRUPTOR
 
 /* USER CODE BEGIN PV */
 
@@ -68,7 +71,19 @@ void MX_USB_HOST_Process(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if(HAL_GetTick() - tiempo > T_antirrebotes){
+		if(GPIO_Pin == GPIO_PIN_6){
+			if(sw == 0){
+				sw ==1;
+			}
+			else{
+			sw = 0;
+			}
+		tiempo =HAL_GetTick();
+		}
+	}
+}
 /* USER CODE END 0 */
 
 /**
