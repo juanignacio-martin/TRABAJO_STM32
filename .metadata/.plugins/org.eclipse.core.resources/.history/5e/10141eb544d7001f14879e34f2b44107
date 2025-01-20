@@ -68,13 +68,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(HAL_GetTick() - time > T_antirrebotes){
 		if(GPIO_Pin == GPIO_PIN_6){
 			if(sw == 0){
-				sw = 1;
-				sensor_light =0;  		//Para que la luz no se pueda encender por presencia
-				HAL_ADC_Stop_DMA(&hadc1); //No se debe medir la luminosidad
+				sw =1;
 			}
 			else{
 			sw = 0;
-			HAL_ADC_Start_DMA(&hadc1, &light, 1);  //Comienza a medirse la luminosidad
 			}
 		time =HAL_GetTick();
 		}
@@ -125,7 +122,6 @@ int main(void)
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_ADC_Start_DMA(&hadc1, &light, 1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
