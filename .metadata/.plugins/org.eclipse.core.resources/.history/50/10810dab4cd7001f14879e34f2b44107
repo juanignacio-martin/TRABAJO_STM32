@@ -33,9 +33,6 @@
 /* USER CODE BEGIN PD */
 #define T_antirrebotes 300	//CONSTANTE PARA CIRCUITO ANTIRREBOTES
 #define Umbral_light 50    //CONSTANTE PARA MEDIR LUMINOSIDAD
-#define Umbral_distance 400	//CONSTANTE PARA MEDIR LA DISTANCIA
-#define Rep 5			//CONSTANTE NUMERO DE REPETICIONES MEDICION
-
 
 /* USER CODE END PD */
 
@@ -54,13 +51,9 @@ TIM_HandleTypeDef htim4;
 /* USER CODE BEGIN PV */
 uint32_t time;   //VARIABLE PARA TIEMPO ANTIRREBOTES
 uint32_t light =0;	//VARIABLE QUE MUESTRA LUMINOSIDAD DETECTADA POR LDR
-uint32_t distance = 0; // DISTANCIA DETECTADA POR ULTRASONIDO
-uint32_t IC_1= 0; //VARIABLE CON VALOR DE CONTADOR EN FLANCO DE SUBIDA
-uint32_t IC_2= 0; //VARIABLE CON VALOR DE CONTADOR EN FLANCO DE BAJADA
 
 int sw = 0;     //VARIABLE QUE CONTROLA EL ESTADO DEL INTERRUPTOR
 int sensor_light =0;	//VARIABLE CONTROL CUANDO SE ENCIENDE LA LUZ
-int presence = 0;  //VARIABLE QUE CONTROLA EL CONTROL DE PRESENCIA
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -101,33 +94,6 @@ void HAL_ADC_ConvCPltCallback(ADC_HandleTypeDef *hadc){
 			sensor_light = 0;			//Hay luz, no se enciende el LED
 	}
 	HAL_ADC_Start_DMA(&hadc1, &light, 1);
-}
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
-	if(htim->Instance == TIM3){
-		if (IC_1 == 0){ // si todavia no se ha producido el flanco de subida
-			IC_1 = HAL_TIM_ReadCapturedValue(&htim3, TIM_CHANNEL_1);
-			// Cambiamos la sensibilidad de la interrupción al flanco de bajada
-			__HAL_TIM_SET_CAPTUREPOLARITY(&htim3, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_FALLING);
-		}
-		else if (IC_1 != 0){ // si ya se ha producido el flanco de subida
-			IC_valor_2 = HAL_TIM_ReadCapturedValue(&htim3, TIM_CHANNEL_1);
-
-			__HAL_TIM_SET_COUNTER(htim, 0);
-			if (IC_2 > IC_1){
-				distancia = IC_2 - IC_1;
-			}
-			else if (IC_1 > IC_2){
-				distancia = (0xffff - IC_1) + IC_2;
-			}
-			if(distancia < Umbral_distance){ // presencia detectada
-				presence = 1;
-				HAL_TIM_Base_Start_IT(&htim10); // iniciamos el temporizador de 5 segundos
-			}
-			IC_valor_1 = 0;
-			// Cambiamos la sensibilidad de la interrupción al flanco de subida
-			__HAL_TIM_SET_CAPTUREPOLARITY(&htim3, TIM_CHANNEL_1, TIM_INPUTCHANNELPOLARITY_RISING);
-		}
-	}
 }
 /* USER CODE END 0 */
 
