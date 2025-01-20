@@ -1,4 +1,36 @@
-2025-01-19 03:50:19,523 [INFO] WebApp:190 - Connection lost
-2025-01-19 03:51:43,475 [INFO] WebApp:187 - Connection restablished
-2025-01-19 08:28:08,743 [INFO] WebApp:190 - Connection lost
-2025-01-19 11:50:23,695 [INFO] WebApp:187 - Connection restablished
+2025-01-20 15:08:11,100 [INFO] Gpio:277 - dependency for GPIO []
+2025-01-20 15:08:23,408 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,27,403x480,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-20 15:08:25,118 [INFO] Gpio:277 - dependency for GPIO []
+2025-01-20 15:08:30,992 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 492604400 Bytes (717225984)
+2025-01-20 15:08:34,804 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 540116888 Bytes (717225984)
+2025-01-20 15:08:45,645 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 274322680 Bytes (717225984)
+2025-01-20 15:08:46,386 [INFO] ProjectBuilder:2349 - IP not ready for code generation: Clock
+2025-01-20 15:08:48,752 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-01-20 15:08:48,752 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-01-20 15:08:48,753 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-01-20 15:08:48,753 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-01-20 15:08:48,756 [INFO] CodeGenerator:896 - code generatio: config db path: D:\Programas\STM32\STM32CubeIDE_1.17.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-01-20 15:08:49,172 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\MXTmpFiles\license.tmp_save
+2025-01-20 15:08:50,069 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\MXTmpFiles\license.tmp
+2025-01-20 15:08:50,398 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\MXTmpFiles\gpio.tmp_save
+2025-01-20 15:08:50,888 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\MXTmpFiles\gpio.tmp
+2025-01-20 15:08:51,086 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Src\stm32f4xx_it.c_save
+2025-01-20 15:08:52,191 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Src\stm32f4xx_it.c
+2025-01-20 15:08:52,350 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Inc\stm32f4xx_it.h_save
+2025-01-20 15:08:52,666 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Inc\stm32f4xx_it.h
+2025-01-20 15:08:52,866 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Src\stm32f4xx_hal_msp.c_save
+2025-01-20 15:08:53,339 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Src\stm32f4xx_hal_msp.c
+2025-01-20 15:08:53,381 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\MXTmpFiles\system.tmp_save
+2025-01-20 15:08:53,625 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\MXTmpFiles\system.tmp
+2025-01-20 15:08:53,724 [INFO] CodeEngine:311 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Inc\stm32f4xx_hal_conf.h_save
+2025-01-20 15:08:54,103 [INFO] CodeEngine:335 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Inc\stm32f4xx_hal_conf.h
+2025-01-20 15:08:54,466 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Inc\main.h_save
+2025-01-20 15:08:55,036 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Inc\main.h
+2025-01-20 15:08:55,454 [INFO] CodeEngine:255 - oldGeneratedFile, D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Src\main.c_save
+2025-01-20 15:08:55,830 [INFO] CodeEngine:279 - Generated code: D:\Datos\Universidad\4.Cuarto\SED\trabajo\TRABAJO_MICROS\TrabajoDefinitivo\TRABAJO_STM32\Light_Control\Core\Src\main.c
+2025-01-20 15:08:57,472 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 1058mS.
+2025-01-20 15:08:57,491 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-01-20 15:08:57,710 [INFO] ConfigFileManager:1579 - The Die is : DIE431
+2025-01-20 15:09:03,406 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 5916mS.
+2025-01-20 15:09:03,409 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-01-20 15:09:03,414 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
